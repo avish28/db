@@ -1,0 +1,16 @@
+{% extends "home/layout.html" %}
+
+{% block title %}
+Employees
+{% endblock %}
+
+{% block body %}
+<h1>Employees</h1>
+<h2>
+    <ul>
+        {% for e in employee %}
+        <li>{{e}}</li>
+        {% endfor %}
+    </ul>
+</h2>
+{% endblock %}

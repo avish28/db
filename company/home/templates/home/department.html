@@ -5,5 +5,17 @@ Department
 {% endblock %}
 
 {% block body %}
-<h1>Welcome to our department</h1>
+<h1>Departments detail</h1>
+
+<h2>
+    <ol>
+        {% for d in department %}
+        <li><a href="{% url 'de' d.id %}">
+            {{d}}
+        </a>
+            </li>
+        {% endfor %}
+    </ol>
+
+</h2>
 {% endblock %}
