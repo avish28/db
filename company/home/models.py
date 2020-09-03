@@ -6,7 +6,7 @@ class employee(models.Model):
     emp_fname=models.CharField(max_length=10)
     emp_lname=models.CharField(max_length=10)
     emp_mob=models.CharField(max_length=10,unique=True)
-    emp_dept=models.ManyToManyField('department',related_name='dep_emp')
+    emp_dept=models.ManyToManyField('department',related_name='dep_emp',blank=True)
 
     def __str__(self):
         return f"Employee:{self.emp_fname}  {self.emp_lname}"

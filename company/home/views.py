@@ -19,10 +19,17 @@ def emp(request):
                    {'employee':e1})
 
 def depemp(request,dept_id):
-     deinfo=department.objects.get(pk=dept_id);
-     einfo=deinfo.dep_emp.all()
-     return  render(request,"home/depemp.html",
+    deinfo = department.objects.get(pk=dept_id);
+    if request.method=="POST":
+          e1=employee(emp_fname=request.POST["addf"],emp_lname=request.POST["addl"],emp_mob=request.POST["addm"])
+          e1.save()
+          e1.emp_dept.add(deinfo)
+
+    einfo=deinfo.dep_emp.all()
+    return  render(request,"home/depemp.html",
                    {'employee':einfo})
+
+
 
 
 

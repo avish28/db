@@ -13,4 +13,14 @@ Employees of departments
         {% endfor %}
     </ul>
 </h2>
+<h2>
+    Enter new employee
+    <form action="" method="POST">
+        {% csrf_token %}
+       First name: <input type="text" name="addf">
+        Last name: <input type="text" name="addl">
+        Mobile: <input type="text" name="addm">
+        <input type="submit" name="'submit">
+    </form>
+</h2>
 {% endblock %}
